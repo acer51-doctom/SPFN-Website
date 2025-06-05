@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <title>Guides | SPFN</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <img rel="icon" href="/logo.ico" type="image/x-icon">
+            <h1>SPFN</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <a href="/"><button class="header-button">Home</button></a>
+                <a href="/guides"><button class="header-button">Guides</button></a>
+                <a href="/account"><button class="header-button">Account</button></a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Guides</h2>
+        <div class="guide-buttons">
+            <button class="guide active" onclick="changeGuide('g-install')">Installation - Wii U</button>
+            <button class="guide" onclick="changeGuide('g-install-cemu')">Installation - Cemu</button>
+            <button class="guide" onclick="changeGuide('g-troubleshoot')">Troubleshooting - Wii U</button>
+        </div>
+
+        <div class="guide-content" id="g-install">
+            <h3>Installation - Wii U</h3>
+            <p>Install Plugins</p>
+            <p>Create Account</p>
+        </div>
+        <div class="guide-content" id="g-install-cemu" style="display: none;">
+            <h3>Installation - Cemu</h3>
+            <p>Install on Wii U first</p>
+            <p>Create Account</p>
+            <p>Dump SPFN account</p>
+            <p>Transfer to Cemu</p>
+            <p>Add network_services.xml to Cemu Folder</p>
+        </div>
+        <div class="guide-content" id="g-troubleshoot" style="display: none;">
+            <h3>Troubleshooting - Wii U</h3>
+            <p>Join the Discord</p>
+        </div>
+
+        <script type="text/javascript" src="guides.js"></script>
+    </main>
+
+    <footer>
+        <p class="center">Need assistance? <a href="https://discord.gg/grMSxZf">Join the Discord</a></p>
+    </footer>
+</body>
