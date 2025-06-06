@@ -1,32 +1,59 @@
-const requestAddr = "https://account.spfn.net/api/v2/oauth2/generate_token"
+async function generateToken(creds) {
+    const response = await fetch("https://account.spfn.net/api/v2/oauth2/generate_token", {
+        method: "GET",
+        headers: {
+            "Authorization": `Basic ${creds}`,
+        }
+    })
+    if (!response.ok) throw new Error("Network Response was not okay when Generating Token");
+    
+    const data = await response.json();
 
-document.getElementById("login").addEventListener("submit", function(event) {
+    sessionStorage.setItem("authToken", data["token"])
+    sessionStorage.setItem("authExpires", data["expiry"])
+}
+
+document.getElementById("login").addEventListener("submit", async function(event) {
     event.preventDefault();
 
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+    const username = await document.getElementById("username").value;
+    const password = await document.getElementById("password").value;
 
     const credentials = btoa(`${username} ${password}`);
 
-    fetch(requestAddr, {
+    let expiry = sessionStorage.getItem("authExpires");
+    let token = sessionStorage.getItem("authToken");
+    if (expiry) {
+        if (!token) {
+            console.log("No token found - Generating new token")
+            await generateToken(credentials); // Generate Token and Save to Session Storage
+        }
+    } else {
+        console.log("No token found - Generating new token")
+        await generateToken(credentials);
+    }
+
+    const response = await fetch("https://account.spfn.net/api/v2/users/@me/profile", {
         method: "GET",
         headers: {
-            "Authorization": credentials,
+            "Authorization": `Bearer ${token}`
         }
     })
-    .then(response => {
-        if (!response.ok) throw new Error("Network Response was not okay");
-        return response.json();
-    })
-    .then(data => { // Success - Hide Form and Show Info on Screen
-        document.getElementById("username").value = `SFID: ${data["username"]}`
+    if (!response.ok) throw new Error("Network Response was not okay when requesting Profile")
+    
+    const data = await response.json();
 
-        document.getElementById("email").value = data["email"];
-        document.getElementById("dob").value = data["birthdate"];
-        document.getElementById("tz").value = data["timezone"];
-        document.getElementById("region").value = data["region"];
+    console.log(data)
 
-        document.getElementById("login").style.display = "none";
-        document.getElementById("user-info").style.display = "flex";
-    })
+    // Success - Display user data
+    document.getElementById("display-name").textContent = data["mii"]["name"];
+    document.getElementById("sfid").textContent = `SFID: ${data["user_id"]}`;
+
+    document.getElementById("email").innerHTML = `<strong>Email: </strong>${data["email"]["address"]}`;
+    document.getElementById("dob").innerHTML = `<strong>Date of Birth: </strong>${data["birth_date"]}`;
+    document.getElementById("tz").innerHTML = `<strong>Timezone: </strong>${data["tz_name"]}`;
+    document.getElementById("region").innerHTML = `<strong>Country/Region: </strong>${data["country"]}`;
+
+    document.getElementById("login").style.display = "none";
+    document.getElementById("user-info").style.display = "flex";
 })

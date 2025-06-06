@@ -5,9 +5,9 @@
 </head>
 <body>
     <header>
-        <div>
-            <img rel="icon" href="/logo.ico" type="image/x-icon">
-            <h1>SPFN</h1>
+        <div style="display: flex;">
+            <h1 style="margin: 0 auto;">SPFN</h1>
+            <h2 style="font-size: 32px; margin: auto; padding: 12px">Guides</h2>
         </div>
         <nav>
             <ul class="nav-links">
@@ -19,29 +19,30 @@
     </header>
 
     <main>
-        <h2>Guides</h2>
-        <div class="guide-buttons">
-            <button class="guide active" onclick="changeGuide('g-install')">Installation - Wii U</button>
-            <button class="guide" onclick="changeGuide('g-install-cemu')">Installation - Cemu</button>
-            <button class="guide" onclick="changeGuide('g-troubleshoot')">Troubleshooting - Wii U</button>
-        </div>
+        <div class="guide-container">
+            <div class="guide-buttons">
+                <button class="guide active" onclick="changeGuide('g-install')">Installation - Wii U</button>
+                <button class="guide" onclick="changeGuide('g-install-cemu')">Installation - Cemu</button>
+                <button class="guide" onclick="changeGuide('g-troubleshoot')">Troubleshooting - Wii U</button>
+            </div>
 
-        <div class="guide-content" id="g-install">
-            <h3>Installation - Wii U</h3>
-            <p>Install Plugins</p>
-            <p>Create Account</p>
-        </div>
-        <div class="guide-content" id="g-install-cemu" style="display: none;">
-            <h3>Installation - Cemu</h3>
-            <p>Install on Wii U first</p>
-            <p>Create Account</p>
-            <p>Dump SPFN account</p>
-            <p>Transfer to Cemu</p>
-            <p>Add network_services.xml to Cemu Folder</p>
-        </div>
-        <div class="guide-content" id="g-troubleshoot" style="display: none;">
-            <h3>Troubleshooting - Wii U</h3>
-            <p>Join the Discord</p>
+            <div class="guide-content" id="g-install">
+                <h3>Installation - Wii U</h3>
+                <p>Install Plugins</p>
+                <p>Create Account</p>
+            </div>
+            <div class="guide-content" id="g-install-cemu" style="display: none;">
+                <h3>Installation - Cemu</h3>
+                <p>Install on Wii U first</p>
+                <p>Create Account</p>
+                <p>Dump SPFN account</p>
+                <p>Transfer to Cemu</p>
+                <p>Add network_services.xml to Cemu Folder</p>
+            </div>
+            <div class="guide-content" id="g-troubleshoot" style="display: none;">
+                <h3>Troubleshooting - Wii U</h3>
+                <p>Join the Discord</p>
+            </div>
         </div>
 
         <script type="text/javascript" src="guides.js"></script>
