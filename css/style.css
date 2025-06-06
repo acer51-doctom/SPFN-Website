@@ -38,11 +38,12 @@ h1 {
 form {
     max-width: 300px;
     margin: 0 auto;
+    padding: 8px;
     display: flex;
     flex-direction: column;
     gap:1rem;
-    border: 2px;
-    border-color: black;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 .form-group {
@@ -72,9 +73,41 @@ form {
 
 .guide-buttons {
     display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    width: 240px;
 }
 
 .guide {
+    font-size: 20px;
+    height: 48px;
+    cursor: pointer;
+    border-style: groove;
+    border-radius: 10px;
+}
+
+.active {
+    background-color: #afafaf;
+}
+
+.guide-content {
+    padding: 0.5rem;
     flex: 1;
-    font-size: 18px;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.guide-container {
+    display: flex;
+    margin: 0 auto;
+    width: 70%;
+    background-color: #dfdfdf;
+    border-radius: 15px;
+    padding: 8px
+}
+
+.filepath {
+    background-color: #bfbfbf;
+    color: black;
+    border-radius: 5px;
 }
