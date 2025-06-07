@@ -14,7 +14,7 @@ function loginError(message, code = null) {
 async function generateToken(username, password) {
     const credentials = btoa(`${username} ${password}`);
 
-    const response = await fetch("https://account.spfn.net/api/v2/oauth2/generatetoken", {
+    const response = await fetch("https://account.spfn.net/api/v2/oauth2/generate_token", {
         method: "GET",
         headers: {
             "Authorization": `Basic ${credentials}`,
