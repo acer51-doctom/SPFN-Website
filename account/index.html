@@ -19,7 +19,15 @@
     </header>
 
     <main>
-        <form id="login">
+        <div id="loading-screen">
+            <h2 class="center">Loading...</h2>
+        </div>
+
+        <div id="login-error" class="error-container" style="display: none;">
+            <h2 id="error-text">ERROR</h2>
+        </div>
+
+        <form id="login" style="display: none;">
             <h3 class="center">Please log in before viewing account information</h3>
             <div class="form-group">
                 <label for="username">SFID:</label>
@@ -29,7 +37,7 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required />
             </div>
-            <button type="submit" style="font-size: 24px;">Login</button>
+            <button type="submit" style="font-size: 24px; width: 100%;">Login</button>
             <p class="center" style="font-size: 12px;">Please ask an SPFN Developer in the <a href="https://discord.gg/grMSxZf">discord server</a> for assistance with password resets</p>
         </form>
 
@@ -37,10 +45,14 @@
             <div id="user-display" class="info-container" style="width: 180px">
                 <h3 id="display-name" style="margin: 2px;">Display Name</h3>
                 <p id="sfid" style="margin: 2px;">SFID: Username</p>
+                <button style="font-size: 24px; width: 180px;" onclick="logOut()">Log Out</button>
             </div>
             <div id="user-details" class="info-container", style="flex: 1;">
                 <p class="info-text" id="email"><strong>Email: </strong>name@domain.com</p>
                 <p class="info-text" id="dob"><strong>Date of Birth: </strong>dd/mm/yyyy</p>
+                <hr style="margin: 1rem 0; border: none; height: 1px; background: #aaa;">
+                <p class="info-text" id="created-at"><strong>Created: </strong>dd/mm/yyyy hh:mm</p>
+                <hr style="margin: 1rem 0; border: none; height: 1px; background: #aaa;">
                 <p class="info-text" id="tz"><strong>Timezone: </strong>Europe/London</p>
                 <p class="info-text" id="region"><strong>Country/Region: </strong>GB</p>
             </div>
@@ -50,6 +62,6 @@
     </main>
 
     <footer>
-        <p class="center">Need assistance? <a href="https://discord.gg/grMSxZf">Join the Discord</a></p>
+        <p class="center">Need assistance? <a href="https://discord.gg/grMSxZf" target="_blank">Join the Discord</a></p>
     </footer>
 </body>

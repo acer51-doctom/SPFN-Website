@@ -111,3 +111,12 @@ form {
     color: black;
     border-radius: 5px;
 }
+
+.error-container {
+    background-color: #aa0000;
+    width: 40%;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+}
