@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <head>
     <title>Home | SPFN</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="/js/lang.js"></script>
 </head>
 <body>
     <header>
@@ -10,14 +14,96 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <a href="/"><button class="header-button">Home</button></a>
+                <a href="/"><button class="header-button active">Home</button></a>
                 <a href="/guides"><button class="header-button">Guides</button></a>
                 <a href="/account"><button class="header-button">Account</button></a>
             </ul>
         </nav>
     </header>
     <main>
-        <p>Splatfestival Network - Restoring Splatfests to Splatoon on the Wii U</p>
+        <div class="title">
+            <h2 class="title-main">Splatfestival Network</h2>
+            <p class="title-desc">Restoring Splatfests to Splatoon on the Wii U</p>
+            <a href="https://github.com/Splatfestival-Network" target="_blank">Find us on Github</a>
+        </div>
+        <div class="home-container">
+            <h2 style="margin: 4px;">Splatfest Information</h2>
+            <p style="margin: 4px;">Check here for information about current or upcoming splatfests</p>
+            <div id="splatfest-active" class="splatfest-active", style="display: none;">
+                <h3 style="margin: 0px;">Splatfest is Active!</h3>
+            </div>
+            <div id="splatfest-notfound" class="splatfest-notfound">
+                <h3 style="margin: 0px;">No splatfests currently active or upcoming</h3>
+            </div>
+            <div id="splatfest-info" style="text-align: center; display: none;">
+                <h3 id="splatfest-title"><strong style="background-color: #e25604;">Team Kid</strong> vs. <strong style="background-color: #0438e2;">Team Squid</strong></h3>
+                <p id="splatfest-starts"><strong>Starts: </strong>dd/mm/yyyy hh/mm</p>
+                <p id="splatfest-ends"><strong>Ends: </strong>dd/mm/yyyy hh/mm</p>
+            </div>
+        </div>
+        <div class="home-container">
+            <h2 style="margin: 0 auto;">Credits</h2>
+            <p>Members or Groups that made Splatfestival Network what it is today</p>
+            <div class="team-members">
+                <div class="member-row">
+                    <div class="team-member">
+                        <img src="/res/img/pretendo.png">
+                        <div style="display: block;">
+                            <a href="https://github.com/PretendoNetwork/" target="_blank" class="team-link"><h2>Pretendo Network</h2></a>
+                            <p>Original Server Code and Reverse Engineering</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/res/img/tv.png">
+                        <div style="display: block;">
+                            <a href="https://github.com/DJMrTV" target="_blank" class="team-link"><h2>TV</h2></a>
+                            <p>Owner and Server Developer</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/res/img/ceantix.png">
+                        <div style="display: block;">
+                            <a href="https://github.com/ceantixdev" target="_blank" class="team-link"><h2>Ceantix</h2></a>
+                            <p>Server Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-row">
+                    <div class="team-member">
+                        <img src="/res/img/bloxerhd.png">
+                        <div style="display: block;">
+                            <a href="https://github.com/BloxerHD018" target="_blank" class="team-link"><h2>BloxerHD</h2></a>
+                            <p>Website Developer</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/res/img/kinnay.png">
+                        <div style="display: block;">
+                            <a href="https://github.com/kinnay" target="_blank" class="team-link"><h2>Kinnay</h2></a>
+                            <p>Documentation of PRUDP and RMC</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/res/img/purplepote.png">
+                        <div style="display: block;">
+                            <h2>PurplePote</h2>
+                            <p>Splatfestival Admin who Supported Development</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-row">
+                    <div class="team-member">
+                        <img src="/res/img/splatfestival.png">
+                        <div style="display: block;">
+                            <a href="https://discord.gg/grMSxZf" target="_blank" class="team-link"><h2>Splatfestival Staff</h2></a>
+                            <p>Supported Development and Deployment of SPFN</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="/js/home.js"></script>
     </main>
     <footer>
         <p class="center">Need assistance? <a href="https://discord.gg/grMSxZf" target="_blank">Join the Discord</a></p>

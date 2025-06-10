@@ -1,31 +1,83 @@
+body {
+    background-color: #610707;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+button {
+    cursor: pointer;
+    border: 2px solid #a00b0b;
+    border-radius: 10px;
+    background-color: #6d0606;
+    color: white;
+    border-radius: 15px;
+}
+
+img {
+    border-radius: 15px;
+    margin: 8px 8px;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 1rem;
     padding: 1rem 2rem;
-    background-color: #b32d28;
+    background-color: #940b0b;
     color: white;
     border-radius: 15px;
+}
+
+footer {
+    padding: 1rem 2rem;
+    background-color: #940b0b;
+    border-radius: 15px;
+    margin: 1rem;
+}
+
+main {
+    flex: 1;
+    padding: 1rem;
+    align-items: center;
+    height: 100vh;
+}
+
+a {
+    color: #00afff;
 }
 
 h1 {
     border-radius: 2px;
     color: white;
     font-size: 64px;
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 2px black;
     margin: 0;
+}
+
+strong {
+    border-radius: 8px;
+    padding: 4px;
+}
+
+input {
+    background-color: #5f0808;
+    border: 1px solid white;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 4px;
 }
 
 .header-button {
     padding: 0.5rem;
     font-size: 1rem;
-    background-color: #9c100c;
-    color: rgb(255, 255, 255);
-    border-color: #b4b4b4;
-    border-radius: 2px;
+    color: white;
     cursor: pointer;
-    border-style: groove;
-    border-radius: 10px;
     height: 64px;
     margin: 0px;
     font-size: 32px;
@@ -38,37 +90,46 @@ h1 {
 form {
     max-width: 300px;
     margin: 0 auto;
-    padding: 8px;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap:1rem;
-    border: 2px solid black;
+    border: 4px solid #a00b0b;
     border-radius: 15px;
+    background: #6d0606;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
     font-weight: bold;
+    margin: 8px 0;
 }
 
 .info {
-    width: 70%;
+    min-width: 40%;
+    max-width: 800px;
     margin: 0 auto;
-    background-color: black;
+    background-color: #a00b0b;
     padding: 4px;
     display: flex;
+    border-radius: 15px;
 }
 
 .info-container {
-    background-color: #dfdfdf;
+    background-color: #6d0606;
     text-align: center;
-    margin: 2px 2px;
+    margin: 2px;
+    border-radius: 15px;
+    padding: 4px 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 .info-text {
     text-align: left;
     margin: 4px;
+    flex: 1;
 }
 
 .guide-buttons {
@@ -82,34 +143,35 @@ form {
     font-size: 20px;
     height: 48px;
     cursor: pointer;
-    border-style: groove;
+    border: 2px solid #a00b0b;
     border-radius: 10px;
-}
-
-.active {
-    background-color: #afafaf;
+    background-color: #6d0606;
+    color: white;
+    margin: 4px 0;
 }
 
 .guide-content {
     padding: 0.5rem;
     flex: 1;
-    border: 2px solid black;
+    border: 4px solid #a00b0b;
     border-radius: 15px;
+    color: white;
 }
 
 .guide-container {
     display: flex;
     margin: 0 auto;
     width: 70%;
-    background-color: #dfdfdf;
+    background-color: #770505;
     border-radius: 15px;
     padding: 8px
 }
 
 .filepath {
-    background-color: #bfbfbf;
-    color: black;
+    background-color: #610707;
+    color: white;
     border-radius: 5px;
+    padding: 2px;
 }
 
 .error-container {
@@ -118,5 +180,91 @@ form {
     margin: 0 auto;
     color: white;
     text-align: center;
+    border: 2px solid white;
     border-radius: 15px;
+}
+
+.title {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #770505;
+    border-radius: 25px;
+    border: 4px solid #a00b0b;
+}
+
+.title-main {
+    font-size: 84px;
+    margin: 0 auto;
+    -webkit-text-stroke: 2px black;
+}
+
+.title-desc {
+    font-size: 24px;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #770505;
+    border-radius: 25px;
+    margin: 2rem 0;
+    padding: 24px;
+    border: 4px solid #a00b0b;
+}
+
+.team-members {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    max-width: 2000px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.member-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.team-member {
+    background-color: #a00b0b;
+    margin: 8px 8px;
+    padding: 8px 8px;
+    border-radius: 15px;
+    max-width: 600px;
+    height: 10rem;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    flex: 0 1 30%;
+}
+
+.team-link {
+    color: white;
+}
+
+.splatfest-active {
+    background-color: #00af00;
+    border: 2px solid #00ff00;
+    border-radius: 16px;
+    padding: 8px;
+}
+
+.splatfest-notfound {
+    background-color: #6d0606;
+    border: 2px solid #a00b0b;
+    border-radius: 16px;
+    padding: 8px;
+}
+
+.active {
+    background-color: #a00b0b;
+    border-color: #6d0606;
 }
