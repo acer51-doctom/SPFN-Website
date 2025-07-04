@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Guides | SPFN</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="/js/lang.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <header>
@@ -25,99 +29,17 @@
     <main>
         <div class="guide-container">
             <div class="guide-buttons">
-                <button class="guide active" onclick="changeGuide('g-install')" id="bg-install">Installation - Wii U</button>
-                <button class="guide" onclick="changeGuide('g-install-cemu')" id="bg-install-cemu">Installation - Cemu</button>
-                <button class="guide" onclick="changeGuide('g-troubleshoot')" id="bg-troubleshoot">Troubleshooting - Wii U</button>
+                <a class="guide" id="install-wiiu" href="/guides?guide=install-wiiu">Installation - Wii U</a>
+                <a class="guide" id="install-cemu" href="/guides?guide=install-cemu">Installation - Cemu</a>
+                <a class="guide" id="common-errors" href="/guides?guide=common-errors">Common Error Codes</a>
+                <a class="guide" id="troubleshoot-wiiu" href="/guides?guide=troubleshoot-wiiu">Troubleshooting - Wii U</a>
+                <a class="guide" id="troubleshoot-cemu" href="/guides?guide=troubleshoot-cemu">Troubleshooting - Cemu</a>
             </div>
 
-            <div class="guide-content" id="g-install">
-                <h2>Installation - Wii U</h2>
-                <p>Requirements:</p>
-                <ul>
-                    <li>Wii U with Aroma</li>
-                    <li>SD Card (Preferrably 32GB)</li>
-                    <li>Computer or other device to access SD Card</li>
-                    <li>An internet connection</li>
-                </ul>
-                <p>
-                    Ensure that you don't have a default user set before setting up SPFN as it could cause you to log in with the wrong account.
-                    To disable it, turn on your Wii U and when it logs in, press your Mii in the top left and scroll down to the option labelled "Default User" and disable it.
-                </p>
-                <p>If you are currently using Pretendo's DNS servers to connect to Pretendo, disable the DNS server before continuing.</p>
-                <h3>Step 1 - SD Card Preparation</h3>
-                <p>Plug your SD card into your computer and navigate to <strong class="filepath">SD:/wiiu/environments</strong></p>
-                <p>Make a copy of your <strong class="filepath">aroma</strong> environment folder and rename it to <strong class="filepath">SPFN</strong> - this will be the environment you use for connecting to our servers.</p>
-                <p>For users who previously used Pretendo's Inkay plugin, delete the files <strong class="filepath">plugins/inkay-pretendo.wps</strong> and <strong class="filepath">modules/inkay-pretendo.wms</strong> from the SPFN environment.</p>
-                <p>Download the plugins and modules found here (LINK NOT AVAILABLE) - make sure you enable file name extensions in your file browser and take note of the extension.</p>
-                <ul>
-                    <li><strong class="filepath">plugin.wps</strong> goes into <strong class="filepath">plugins</strong></li>
-                    <li><strong class="filepath">module.wms</strong> goes into <strong class="filepath">modules</strong></li>
-                </ul>
-                <p>With these files installed, you can eject your SD card and put it into your Wii U.</p>
-
-                <h3>Step 2 - Setup on Console</h3>
-                <p>Power on the console and hold X on the gamepad to open the Environment Loader.</p>
-                <p>Navigate using the D-Pad to <strong class="filepath">SPFN</strong> and press A to select. Your console will now be connected to our servers.</p>
-                <p>
-                    In the top left of your screen, you should see a message saying "Connected to Servers". 
-                    If you see "Using Pretendo Network", DO NOT PROGRESS.
-                    Turn off the console and delete the Pretendo plugins as mentioned in step 1.
-                    If you do not see the "Connected to Servers" message, you likely didn't install the plugin correctly.
-                    Check the locations of the <strong class="filepath">plugin.wps</strong> and <strong class="filepath">module.wms</strong> files.
-                </p>
-                <p>
-                    SPFN's servers are separate from both Nintendo and Pretendo, so you will need to create a new account to access our services.
-                    Now that your console is connected to our servers, you should be brought to the accounts page Press <strong class="filepath">+</strong> on your gamepad to create a new account.
-                    Follow the process of creating the account. Select no when prompted if you have an NNID. Select a Mii for your account. When asked to create an account, press <strong class="filepath">Link</strong>.
-                </p>
-                <p>Before continuing, confirm that the guide references Splatfestival Network. If it does not, your plugins aren't set up correctly. Return to step 1 and ensure they are correctly placed.</p>
-                <p>If it does reference Splatfestival Network, read through the agreement and press <strong class="filepath">Agree</strong> and enter your account information.</p>
-                <p>DO NOT REUSE PASSWORDS ACROSS MULTIPLE ACCOUNTS INSIDE OR OUTSIDE OF OUR NETWORK</p>
-                <p>
-                    Once you have created your account, you will be sent a verification code to your registered email address.
-                    To enter it, log into your account on your Wii U and it will prompt you for the code.
-                    If you are already logged in, press on your Mii in the top left of your gamepad and select Switch User. Then, select your SPFN account to log back in.
-                </p>
-                <p>Open Splatoon and check that you get the news.</p>
-                <p>You are now ready to play on the Splatfestival Network! <a href="https://discord.gg/grMSxZf">Join the Discord</a> for information about upcoming or active Splatfests and other updates.</p>
-
+            <div class="guide-content" id="guide-contents">
+                <h3>Loading...</h3>
             </div>
-            <div class="guide-content" id="g-install-cemu" style="display: none;">
-                <h2>Installation - Cemu</h2>
-                <p>Requirements:</p>
-                <ul>
-                    <li>Wii U with SPFN Set Up</li>
-                    <li>SD Card (Preferrably 32GB)</li>
-                    <li>Computer or other device to access SD Card</li>
-                    <li>Device that can run Cemu</li>
-                    <li>An internet connection</li>
-                </ul>
-                <h3>Step 1: Dump Necessary Files</h3>
-                <p>
-                    This guide requires that you have alredy set up SPFN on your Wii U and created an account.
-                    Account creation is currently unavailable on this website.
-                    If you have not done this yet, <a href="#" onclick="changeGuide('g-install')">follow this guide first.</a>
-                </p>
-                <p>
-                    You will also need to dump your SPFN account and <strong class="filepath">otp.bin</strong> and <strong class="filepath">seeprom.bin</strong> files from your Wii U.
-                    Follow Cemu's <a href="https://cemu.cfw.guide/using-dumpling.html#online-files" target="_blank">guide to dump online files</a> to dump your SPFN account.
-                    Take this time to also dump your Splatoon game and the latest update if you haven't already done so.
-                </p>
-                <p>Transfer the dumped files to your computer.</p>
-                <h3>Step 2: Cemu Configuration</h3>
-                <p>Make sure you are using the latest version of Cemu. This can be found <a href="https://github.com/cemu-project/Cemu/releases" target="_blank">here</a></p>
-                <p>Open Cemu and go to File -> Open Cemu Folder. Place the dumped <strong class="filepath">mlc01</strong> folder into the Cemu folder.</p>
-                <p>Download the following file: network_services.xml (LINK NOT AVAILABLE) and place it into the root of the Cemu folder</p>
-                <p>
-                    Open Cemu and go to Options -> General Settings.
-                    In the Account tab, make sure your SPFN account is selected.
-                    If not, select it from the dropdown.
-                    You should see the option to switch to Custom network services. Select this.
-                    If you can't select it, you haven't added the network_services.xml file correctly.
-                </p>
-                <p>Open Splatoon and check that you get the news.</p>
-                <p>You are now ready to play on the Splatfestival Network! <a href="https://discord.gg/grMSxZf">Join the Discord</a> for information about upcoming or active Splatfests and other updates.</p>
-            </div>
+
             <div class="guide-content" id="g-troubleshoot" style="display: none;">
                 <h2>Troubleshooting - Wii U</h2>
                 <h3>I'm getting error code 118-XXXX when joining Splatoon matches</h3>
@@ -140,3 +62,4 @@
         <p class="center">Need assistance? <a href="https://discord.gg/grMSxZf" target="_blank">Join the Discord</a></p>
     </footer>
 </body>
+</html>

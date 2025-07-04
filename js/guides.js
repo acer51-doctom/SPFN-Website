@@ -1,23 +1,26 @@
 const guideContents = document.querySelectorAll(".guide-content");
 const guideButtons = document.querySelectorAll(".guide");
 
-function changeGuide(newID) {
-    guideContents.forEach(content => {
-        if (content.id == newID) {
-            content.style.display = "block";
-        } else {
-            content.style.display = "none";
-        }
-    })
+const params = new URLSearchParams(window.location.search);
+const guideParam = params.get("guide");
 
-    guideButtons.forEach(button => {
-        let gid = button.id.slice(1);
-        if (gid == newID) {
-            button.classList.add("active");
-        } else {
-            if (button.classList.contains("active")) {
-                button.classList.remove("active");
-            }
-        }
-    })
+let guide = "install-wiiu";
+let guidePath = '/md/install-wiiu.md';
+if (guideParam) {
+    guide = guideParam;
+    guidePath = `/md/${guide}.md`;
 }
+
+fetch(guidePath)
+    .then(res => {
+        if (!res.ok) throw new Error(`Guide "${guide} was not found`);
+        
+        const guideButton = document.getElementById(guide);
+        if (guideButton) guideButton.classList.add("active");
+
+        return res.text();
+    })
+    .then(text => {
+        const html = marked.parse(text);
+        document.getElementById("guide-contents").innerHTML = html;
+    })

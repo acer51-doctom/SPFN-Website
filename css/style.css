@@ -148,6 +148,9 @@ form {
     background-color: #6d0606;
     color: white;
     margin: 4px 0;
+    text-align: center;
+    line-height: 48px;
+    text-decoration: none;
 }
 
 .guide-content {
@@ -167,7 +170,7 @@ form {
     padding: 8px
 }
 
-.filepath {
+code {
     background-color: #610707;
     color: white;
     border-radius: 5px;
